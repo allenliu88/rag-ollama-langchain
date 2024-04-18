@@ -2,6 +2,7 @@ import gradio as gr
 from langchain_community.document_loaders import WebBaseLoader, PyPDFLoader
 from langchain_community.vectorstores import Chroma
 from langchain_community import embeddings
+from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.chat_models import ChatOllama
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
@@ -23,7 +24,7 @@ def process_input(urls, question):
     vectorstore = Chroma.from_documents(
         documents=doc_splits,
         collection_name="rag-chroma",
-        embedding=embeddings.ollama.OllamaEmbeddings(model='nomic-embed-text'),
+        embedding=OllamaEmbeddings(model='nomic-embed-text'),
     )
     retriever = vectorstore.as_retriever()
 
