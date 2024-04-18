@@ -46,4 +46,4 @@ iface = gr.Interface(fn=process_input,
                      outputs="text",
                      title="Document Query with Ollama",
                      description="Enter URLs and a question to query the documents.")
-iface.launch(server_name='192.168.20.120')
+iface.launch(server_name='0.0.0.0')
