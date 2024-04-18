@@ -1,3 +1,8 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+
 import gradio as gr
 from langchain_community.document_loaders import WebBaseLoader, PyPDFLoader
 from langchain_community.vectorstores import Chroma
