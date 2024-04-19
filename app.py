@@ -1,3 +1,4 @@
+# 用于替换sqlite3，例如，本地sqlite3版本过低，但又不想麻烦升级
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')

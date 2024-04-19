@@ -62,6 +62,9 @@ cd rag-project-with-ollama-and-langchain
 $ pip3 show protobuf
 $ pip3 install protobuf==4.21.0
 
+## 用于替换sqlite3，详情参考app.py
+$ pip3 install pysqlite3-binary
+
 ## 安装依赖
 $ pip3 install -r requirements.txt
 ```
